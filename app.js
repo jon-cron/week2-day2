@@ -1,7 +1,7 @@
-console.log("hi");
+// console.log("hi");
 
 // STUB package array
-const packages = [
+let packages = [
   {
     priorityLevel: "express",
     isFragile: false,
@@ -51,3 +51,42 @@ const packages = [
     trackingNumber: "suz2367",
   },
 ];
+
+function drawPackages() {
+  let packageElm = document.getElementById("packageLocation");
+
+  let template = "";
+  packages.forEach((package) => (template += package.to));
+  packageElm.innerText = template;
+}
+
+function drawMaybeMissing(suspects) {
+  let packageElm = document.getElementById("packageLocation");
+
+  let template = "";
+
+  suspects.forEach((sus) => (template += sus.to));
+
+  packageElm.innerText = template;
+}
+
+function filterPriority(blank) {
+  console.log("Priority Level is", blank);
+  let priorityType = packages.filter(
+    (package) => package.priorityLevel == blank
+  );
+  console.log(priorityType);
+  drawMaybeMissing(priorityType);
+}
+
+function isFragile() {
+  let fragile = packages.filter((package) => package.isFragile == true);
+  console.log("package is", fragile);
+  drawMaybeMissing(fragile);
+}
+function isNotFragile() {
+  let notFragile = packages.filter((package) => package.isFragile !== true);
+  console.log("package is", notFragile);
+  drawMaybeMissing(notFragile);
+}
+drawPackages();

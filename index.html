@@ -20,10 +20,49 @@
   </head>
 
   <body>
-    <header>
-      <!-- place navbar here -->
+    <header class="container-fluid">
+      <section class="row text-center">
+        <div class="col-12 text-center">Which package is missing</div>
+      </section>
     </header>
-    <main></main>
+    <main class="container-fluid">
+      <section class="row">
+        <div class="col-12 text-center text-dark" id="packageLocation">
+          Packages
+        </div>
+      </section>
+      <section class="row justify-content-center">
+        <div
+          class="col-3 btn btn-primary border-light"
+          onclick="filterPriority('express')"
+        >
+          Priority Level: Express
+        </div>
+        <div
+          class="col-3 btn btn-primary border-light"
+          onclick="filterPriority('standard')"
+        >
+          Priority Level: Standard
+        </div>
+        <div
+          class="col-3 btn btn-primary border-light"
+          onclick="filterPriority('free')"
+        >
+          Priority Level: Free
+        </div>
+        <div class="col-6 btn btn-secondary border-dark" onclick="isFragile()">
+          Is fragile
+        </div>
+        <div
+          class="col-6 btn btn-secondary border-dark"
+          onclick="isNotFragile()"
+        >
+          Is Not fragile
+        </div>
+        <div class="col-6 btn btn-light border-dark">Weight: high to low</div>
+        <div class="col-6 btn btn-light border-dark">Weight: low to high</div>
+      </section>
+    </main>
     <footer>
       <!-- place footer here -->
     </footer>
